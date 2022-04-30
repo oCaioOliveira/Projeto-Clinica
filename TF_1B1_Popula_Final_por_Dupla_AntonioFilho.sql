@@ -209,8 +209,20 @@ VALUES
 (15, 'Problemas de pressão'),
 (18, 'Possui diabetes tipo 1'),
 (18, 'Possui pressão alta'),
-(20, 	'Alergias'),
+(20, 'Alergias'),
 (21, 'Anenia falciforme');
+
+
+INSERT INTO medicamentosAoNascer
+VALUES
+(15, 'Melatonina'),
+(15, 'dipirona'),
+(16, 'dipirona'),
+(20, 'Melatonina'),
+(18, 'Apetivin'),
+(17, 'Melatonina'),
+(18, 'dipirona');
+
 
 
 INSERT INTO casosNaFamiliaDeDoenca
@@ -232,35 +244,6 @@ VALUES
 (3, 'null'),
 (4, 'null'),
 (5, 'null');
-
-
-
-
-INSERT INTO medicamentosAoNascer
-VALUES
-(1, 'null'),
-(2, 'null'),
-(3, 'null'),
-(4, 'null'),
-(5, 'null');
-
-
-INSERT INTO casosNaFamiliaDeDoenca
-VALUES
-(1, 'diabetes'),
-(2, 'AVC'),
-(3, 'diabetes'),
-(4, 'diabetes'),
-(5, 'diabetes');
-
-INSERT INTO dificuldades
-VALUES
-(1, ' pegar no lapis'),
-(2, 'leitura'),
-(3, ' palavras'),
-(4, 'concentracao'),
-(5, 'concentracao');
-
 
 
 INSERT INTO medicamentos
