@@ -336,11 +336,11 @@ CREATE TABLE trabalha (
     idSessao INT NOT NULL,
     idHabilidade INT NOT NULL,
     CONSTRAINT trabalha_SESSAO_FK FOREIGN KEY (idSessao)
-        REFERENCES SESSAO (idSessao)
+        REFERENCES SESSAO(idSessao)
         ON DELETE CASCADE
         ON UPDATE CASCADE,
     CONSTRAINT trabalha_HABILIDADE_FK FOREIGN KEY (idHabilidade)
-        REFERENCES HABILIDADE (idHabilidade)
+        REFERENCES HABILDADE(idHabilidade)
         ON DELETE CASCADE
         ON UPDATE CASCADE
 )ENGINE = InnoDB;
