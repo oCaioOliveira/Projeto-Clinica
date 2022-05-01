@@ -8,41 +8,46 @@
 -- Base de Dados (nome) ...: trabalhofinal1
 -- Ultimas Alteracoes
 --                   01/05/22 => Adequação das permissoes
+-- 					 01/05/22 => Adição roles
 -- PROJETO => 01 Base de Dados
 --         => 23 Tabelas
 --         => 03 Usuarios
 -- ---------------------------------------
 
+CREATE ROLE IF NOT EXISTS 'administrador', 'psicopedagogo', 'responsavel';
+
+GRANT ALL ON TF_1B_AntonioFilho.* TO 'administrador';
+GRANT SELECT, UPDATE, INSERT, DELETE ON TF_1B_AntonioFilho.* TO 'psicopedagogo';
+GRANT SELECT ON TF_1B_AntonioFilho.* TO 'responsavel';
+
 -- PERFIL ADMINISTRADOR
 CREATE USER bianca
 IDENTIFIED BY 'adminSupperar';
+GRANT 'administrador' TO 'bianca';
+
 
 CREATE USER caio
-IDENTIFIED BY 'adminSupperar';
+IDENTIFIED BY 'adminSupperar2';
+GRANT 'administrador' TO 'caio';
 
 -- PERFIL PSICOPEDAGOGO
+
 CREATE USER rozana
 IDENTIFIED BY 'psicopedagogoSuperar';
+GRANT 'psicopedagogo' TO 'rozana';
 
 CREATE USER flavio
-IDENTIFIED BY 'psicopedagogoSuperar';
+IDENTIFIED BY 'psicopedagogoSuperar2';
+GRANT 'psicopedagogo' TO 'flavio';
 
 -- PERFIL RESPONSAVEL
 CREATE USER maria
 IDENTIFIED BY 'responsavelSuperar';
+GRANT 'responsavel' TO 'maria';
 
 CREATE USER joao
-IDENTIFIED BY 'responsavelSuperar';
+IDENTIFIED BY 'responsavelSuperar2';
+GRANT 'responsavel' TO 'joao';
 
+FLUSH PRIVILEGES;
 
--- PRIVILEGIO ADMINISTRADOR
-GRANT ALL PRIVILEGES ON trabalhofinal1.* TO bianca;
-GRANT ALL PRIVILEGES ON trabalhofinal1.* TO caio;
-
--- PRIVILEGIO PsicoPedagogo
-GRANT SELECT, INSERT, UPDATE, DELETE ON trabalhofinal1.* TO rozana;
-GRANT SELECT, INSERT, UPDATE, DELETE ON trabalhofinal1.* TO flavio;
-
--- PRIVILEGIO Responsavel
-GRANT SELECT ON trabalhofinal1.* TO maria;
-GRANT SELECT ON trabalhofinal1.* TO joao;
