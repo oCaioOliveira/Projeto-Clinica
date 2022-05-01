@@ -16,8 +16,9 @@
 --   30/04/2022 => Adição de 02 novas tabelas com seu respectivos atributos e reorganização do script;
 --   01/05/2022 => Correção do auto_increment;
 -- PROJETO => 01 Base de Dados
---         => 23 Tabelas
---         => 03 Usuarios
+--         => 24 Tabelas
+-- 		   => 03 papeis
+--         => 06 Usuarios
 -- ---------------------------------------
 
 CREATE DATABASE IF NOT EXISTS TF_1B_AntonioFilho;

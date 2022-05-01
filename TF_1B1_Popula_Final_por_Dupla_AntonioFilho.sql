@@ -13,8 +13,9 @@
 --              => Mudança na inserção dos atributos qtdSessoesSemanais e precoPorSessao da tabela CONTRATACAO para PACOTE;
 --   30/04/2022 => Adição de novas tuplas para todas as tabelas
 -- PROJETO => 01 Base de Dados
---         => 23 Tabelas
---         => 03 Usuarios
+--         => 24 Tabelas
+-- 		   => 03 papeis
+--         => 06 Usuarios
 -- ---------------------------------------
 
 USE TF_1B_AntonioFilho;

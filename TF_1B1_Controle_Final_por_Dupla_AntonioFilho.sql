@@ -10,8 +10,9 @@
 --                   01/05/22 => Adequação das permissoes
 -- 					 01/05/22 => Adição roles
 -- PROJETO => 01 Base de Dados
---         => 23 Tabelas
---         => 03 Usuarios
+--         => 24 Tabelas
+-- 		   => 03 papeis
+--         => 06 Usuarios
 -- ---------------------------------------
 
 CREATE ROLE IF NOT EXISTS 'administrador', 'psicopedagogo', 'responsavel';

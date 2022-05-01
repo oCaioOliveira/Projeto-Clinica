@@ -12,8 +12,9 @@
 --   27/04/2022 => Adição da instrução de DROP USER para as 03 novos perfis;
 --
 -- PROJETO => 01 Base de Dados
---         => 23 Tabelas
---         => 03 Usuarios
+--         => 24 Tabelas
+-- 		   => 03 papeis
+--         => 06 Usuarios
 -- ---------------------------------------
 
 USE TF_1B_AntonioFilho;
