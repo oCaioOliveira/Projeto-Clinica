@@ -5,7 +5,7 @@
 -- Data Criacao ...........: 15/04/2022
 -- Autor(es) ..............: Caio César Oliveira, Antônio Aldísio de Sousa Alves Ferreira Filho, Bianca Sofia de Oliveira, Daniel Porto
 -- Banco de Dados .........: MySQL 8.0
--- Base de Dados (nome) ...: trabalhofinal1
+-- Base de Dados (nome) ...: TF_1B_AntonioFilho
 --
 -- Ultimas Alteracoes
 --   27/04/2022 => Adição da instrução de DROP TABLE para as 03 novas tabelas: PSICOPEDAGOGO, PACOTE e RELATORIO;
@@ -16,7 +16,7 @@
 --         => 03 Usuarios
 -- ---------------------------------------
 
-USE trabalhofinal1;
+USE TF_1B_AntonioFilho;
 
 DROP TABLE trabalha;
 DROP TABLE HABILIDADE;
