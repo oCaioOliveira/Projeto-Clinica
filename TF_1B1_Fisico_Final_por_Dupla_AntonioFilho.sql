@@ -6,7 +6,7 @@
 -- Autor(es) ..............: Caio César Oliveira, Antônio Aldísio de Sousa Alves Ferreira Filho,
 --                           Bianca Sofia de Oliveira, Daniel Porto
 -- Banco de Dados .........: MySQL 8.0
--- Base de Dados (nome) ...: trabalhofinal1
+-- Base de Dados (nome) ...: TF_1B_AntonioFilho
 --
 -- Ultimas Alteracoes
 --   27/04/2022 => Adição de 03 novas tabelas: PSICOPEDAGOGO, PACOTE e RELATORIO com seus respectivos atributos;
@@ -20,9 +20,9 @@
 --         => 03 Usuarios
 -- ---------------------------------------
 
-CREATE DATABASE IF NOT EXISTS trabalhofinal1;
+CREATE DATABASE IF NOT EXISTS TF_1B_AntonioFilho;
 
-USE trabalhofinal1;
+USE TF_1B_AntonioFilho;
 
 
 -- TABLEAS

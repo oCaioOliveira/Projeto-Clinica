@@ -3,9 +3,9 @@
 --         SCRIPT DE CRIACAO (DDL)
 --
 -- Data Criacao ...........: 15/04/2022
--- Autor(es) ..............: Caio César Oliveira, Antônio Aldísio de Sousa Alves Ferreira Filho
+-- Autor(es) ..............: Caio César Oliveira, Antônio Aldísio de Sousa Alves Ferreira Filho, Bianca Sofia de Oliveira, Daniel Porto
 -- Banco de Dados .........: MySQL 8.0
--- Base de Dados (nome) ...: trabalhofinal1
+-- Base de Dados (nome) ...: TF_1B_AntonioFilho
 --
 -- Ultimas Alteracoes
 --   27/04/2022 => Adição de dados em 03 novas tabelas: PSICOPEDAGOGO, PACOTE e RELATORIO;
@@ -17,7 +17,7 @@
 --         => 03 Usuarios
 -- ---------------------------------------
 
-USE trabalhofinal1;
+USE TF_1B_AntonioFilho;
 
 INSERT INTO PSICOPEDAGOGO(nomePsicopedagogo)
 VALUES
@@ -42,19 +42,19 @@ VALUES
 
 INSERT INTO ANAMNESE
 VALUES
-(null,'Regiane Bras', 'Mae','Caio Oliveira','Brasileiro',1,'A','m', 'nenhuma', 'nenhuma', 'Pais', 'unico','nenhum','s','Dificuldade de entender as letras','s','normal','s','s','s','00:00:00','05:00:00','Regiane Bras', 'normal','n','s','normal de crianca','2022-01-01','s',3,6,8,1,'s','s','s','s','s',2,'n','s','nenhuma','nda','s','n','normal','normal',8),
+(null,'Regiane Bras', 'Mae','Caio Oliveira','Brasileiro',1,'A','m', 'nenhuma', 'nenhuma', 'Pais', 'unico','nenhum','s','Dificuldade de entender as letras','s','normal','s','s','s','00:00:00','05:00:00','Regiane Bras', 'normal','n','s','normal de crianca','2022-01-01','s',3,6,8,1,'s','s','s','s','s',2,'n','s','nenhuma','nda','s','n','normal','normal',1),
 
-(null,'Regiane Bras', 'Mae','Caio Oliveira','Brasileiro',1,'A','m', 'sim', 'nenhuma', 'Pais', 'unico','nenhum','s','Dificuldade em ler','s','normal','s','s','s','00:00:00','05:00:00','Regiane Bras', 'normal','n','s','normal de crianca','2022-01-01','s',3,2,1,2,'s','s','s','s','s',2,'n','s','nenhuma','nda','s','n','normal','cesário',9),
+(null,'Regiane Bras', 'Mae','Caio Oliveira','Brasileiro',1,'A','m', 'sim', 'nenhuma', 'Pais', 'unico','nenhum','s','Dificuldade em ler','s','normal','s','s','s','00:00:00','05:00:00','Regiane Bras', 'normal','n','s','normal de crianca','2022-01-01','s',3,2,1,2,'s','s','s','s','s',2,'n','s','nenhuma','nda','s','n','normal','cesário',2),
 
-(null,'Roberto', 'pai','Caio Oliveira','Brasileiro',2,'B','v', 'nenhuma', 'nenhuma', 'Pais', 'do meio','nenhum','s','Dificuldade em ler','s','normal','s','s','s','00:00:00','05:00:00','Roberto', 'normal','n','s','brava','2022-01-01','s',3,2,1,2,'s','s','s','s','n',3,'n','s','Problemas com miopia','nda','n','n','Com suspeita de depressão','normal',10),
+(null,'Roberto', 'pai','Caio Oliveira','Brasileiro',2,'B','v', 'nenhuma', 'nenhuma', 'Pais', 'do meio','nenhum','s','Dificuldade em ler','s','normal','s','s','s','00:00:00','05:00:00','Roberto', 'normal','n','s','brava','2022-01-01','s',3,2,1,2,'s','s','s','s','n',3,'n','s','Problemas com miopia','nda','n','n','Com suspeita de depressão','normal',3),
 
-(null,'Jair', 'pai','Caio Oliveira','Brasileiro',2,'B','v', 'nenhuma', 'nenhuma', 'Pais', 'do meio','nenhum','s','Dificuldade em ler','s','normal','s','s','s','22:00:00','09:00:00','jair', 'normal','n','s','brava','2022-01-01','s',3,3,1,1,'s','s','s','s','n',2,'n','s','nenhuma','nda','s','n','normal','cesária',11),
+(null,'Jair', 'pai','Caio Oliveira','Brasileiro',2,'B','v', 'nenhuma', 'nenhuma', 'Pais', 'do meio','nenhum','s','Dificuldade em ler','s','normal','s','s','s','22:00:00','09:00:00','jair', 'normal','n','s','brava','2022-01-01','s',3,3,1,1,'s','s','s','s','n',2,'n','s','nenhuma','nda','s','n','normal','cesária',4),
 
-(null,'Jair', 'pai','Caio Oliveira','Brasileiro',2,'B','v', 'nenhuma', 'nenhuma', 'Pais', 'cacula','nenhum','s','Dificuldade em ler e escrever','s','normal','s','s','s','22:00:00','09:00:00','jair', 'normal','n','s','Reage normalmente','2022-01-01','s',3,2,2,2,'s','s','s','s','n',2,'n','s','nenhuma','nda','n','n','normal','normal',12),
+(null,'Jair', 'pai','Caio Oliveira','Brasileiro',2,'B','v', 'nenhuma', 'nenhuma', 'Pais', 'cacula','nenhum','s','Dificuldade em ler e escrever','s','normal','s','s','s','22:00:00','09:00:00','jair', 'normal','n','s','Reage normalmente','2022-01-01','s',3,2,2,2,'s','s','s','s','n',2,'n','s','nenhuma','nda','n','n','normal','normal',5),
 
-(null,'Antônio Pereira Costa', 'pai','Rosana Batista','Brasileira',1,'A','v', 'nenhuma', 'nenhuma', 'Pais', 'cacula','nenhum','s','Dificuldade com a lateralidade','s','normal','s','s','s','22:00:00','09:00:00','jair', 'normal','n','s','brava','2020-01-01','s',3,1,2,3,'s','s','s','n','s',3,'s','n','Audição prejudicada','nda','n','n','Ansiedade na gravidez','cesária',13),
+(null,'Antônio Pereira Costa', 'pai','Rosana Batista','Brasileira',1,'A','v', 'nenhuma', 'nenhuma', 'Pais', 'cacula','nenhum','s','Dificuldade com a lateralidade','s','normal','s','s','s','22:00:00','09:00:00','jair', 'normal','n','s','brava','2020-01-01','s',3,1,2,3,'s','s','s','n','s',3,'s','n','Audição prejudicada','nda','n','n','Ansiedade na gravidez','cesária',6),
 
-(null,'Maria Luisa Oliveira', 'Mãe','Rosana Batista','Brasileiro',3,'C','v', 'nenhuma', 'nenhuma', 'Pais', 'cacula','nenhum','s','Dificuldade em se comunicar e prestar atenção','s','normal','s','s','s','22:00:00','09:00:00','jair', 'normal','n','s','reage com violência','2021-02-01','s',2,1,3,2,'s','s','s','s','n',4,'n','s','nenhuma','nda','n','n','Depressão durante a gravidez','cesária',14);
+(null,'Maria Luisa Oliveira', 'Mãe','Rosana Batista','Brasileiro',3,'C','v', 'nenhuma', 'nenhuma', 'Pais', 'cacula','nenhum','s','Dificuldade em se comunicar e prestar atenção','s','normal','s','s','s','22:00:00','09:00:00','jair', 'normal','n','s','reage com violência','2021-02-01','s',2,1,3,2,'s','s','s','s','n',4,'n','s','nenhuma','nda','n','n','Depressão durante a gravidez','cesária',7);
 
 
 
@@ -114,13 +114,13 @@ VALUES
 
 INSERT INTO CONTRATO
 VALUES
-(null, 100, 15, 72090791063,1, 8),
-(null, 0,  16, 72090791063,2,9),
-(null, 0,  17, 30423392034,3,10),
-(null, 4,  18, 79804697041,1,11),
-(null, 0,  19, 79804697041,5,12),
-(null, 4,  20, 79894697481,7,13),
-(null, 0,  21, 87809256042,5,14);
+(null, 100, 15, 72090791063,1, 1),
+(null, 0,  16, 72090791063,2,2),
+(null, 0,  17, 30423392034,3,3),
+(null, 4,  18, 79804697041,1,4),
+(null, 0,  19, 79804697041,5,5),
+(null, 4,  20, 79894697481,7,6),
+(null, 0,  21, 87809256042,5,7);
 
 
 INSERT INTO SESSAO
@@ -143,9 +143,8 @@ INSERT INTO RELATORIO VALUES
  (null,'Foram trabalhadas as questões de lateralidade, paciência e memória.Melhora na lateralidade com o uso de exercícios envolvendo o corpo
  e posição de objetos, porém a baixa intolerância à frustração persiste, melhorando bem mais lentamente. Acredita-se que com a maturidade isso amenize.
  Indicamos consulta com o neurologista', 4),
- (null,'Foram avaliadas as questões de lateralidade, com uso de exercícios trabalhando direita e esquerda e posição. Melhora significativa nesse quesito. Também 
- houve melhora no relacionamente interpessoal',5 ),
-  (null,'Foram trabalhadas as questões de lateralidade, e memória.Melhora na lateralidade com o uso de exercícios, a baixa intolerância está melhorando. Acredita-se que com a maturidade isso amenize mais.
+ (null,'Foram avaliadas as questões de lateralidade, com uso de exercícios trabalhando direita e esquerda e posição. Melhora significativa nesse quesito. Também houve melhora no relacionamente interpessoal',5 ),
+(null,'Foram trabalhadas as questões de lateralidade, e memória.Melhora na lateralidade com o uso de exercícios, a baixa intolerância está melhorando. Acredita-se que com a maturidade isso amenize mais.
  Indicamos consulta com o neurologista', 6),
  (null,'Foram trabalhadas as questões de relacionamentos interpessoais, sendo que a criança evoluiu de forma significativa,
  interagindo com todos os colegas, recomendamos que a criança frequente retiros para socializar',7 );
@@ -238,40 +237,58 @@ VALUES
 
 INSERT INTO doencasAoNascer
 VALUES
+(15, 'coracao pequeno'),
+(15, 'Fenilcetonúria'),
+(20, 'Hipotireoidismo congênito'),
+(18, 'Fibrose cística'),
+(19, 'Deficiência de Biotinidase'),
+(20,'Galactosemia'),
+(21,'Hemofilia');
 
-(1, 'coracao pequeno'),
-(2, 'null'),
-(3, 'null'),
-(4, 'null'),
-(5, 'null');
 
 
 INSERT INTO medicamentos
 VALUES
-(1, ' null'),
-(2, 'null'),
-(3, ' null'),
-(4, 'null'),
-(5, 'null');
+(1, ' ritalina'),
+(2, 'ritalina'),
+(3, ' ritalina'),
+(4, 'Controla'),
+(5, 'Controla'),
+(6, ' ritalina'),
+(7, 'Controla');
 
 
 
 INSERT INTO especialistasFornecendoAtendimentoAtualmente
 VALUES
-(1, ' null'),
-(2, 'null'),
-(3, ' null'),
-(4, 'null'),
-(5, 'null');
+(1, ' FABIO BATISTA'),
+(2, 'ROSANA BATISTA'),
+(3, ' CAIO BATISTA'),
+(4, 'ERICK BATISTA'),
+(5, 'Controla'),
+(6, ' FABIANA BATISTA'),
+(7, 'FABIANA BATISTA');
 
 
-INSERT INTO habilidadesTrabalhadas
+INSERT INTO HABILIDADE
 VALUES
-(1, ' segurar o lapis'),
-(2, 'leitura'),
-(3, ' leitura'),
-(4, 'leitura'),
-(5, 'desenho');
+(null, 'escrita', 'saber escrever de forma correta'),
+(null, 'leitura', 'juntar sons de letras corretamente'),
+(null, 'lateralidade', 'saber dominar os dois lado do corpo'),
+(null, 'desenho', 'dominar o uso do lapis'),
+(null, 'orientar', 'saber se orientar no espaco e tempo'),
+(null, 'ingles', 'saber se falar ingles'),
+(null, 'fala', 'saber falar de forma correta');
+
+INSERT INTO trabalha
+VALUES
+(1,1),
+(2,2),
+(3,3),
+(4,4),
+(5,5),
+(6,6),
+(7,7);
 
 
 
