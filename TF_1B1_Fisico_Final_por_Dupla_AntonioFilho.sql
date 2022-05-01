@@ -13,7 +13,8 @@
 --              => Mudança do atributo nomePsicopedagogo da tabela DOCUMENTO para PSICOPEDAGOGO;
 --              => Mudança do atributo qtdSessoesSemanais e precoPorSessao da tabela CONTRATO para PACOTE;
 --
---   30/04/2022 => Adição de 01 novas tabelas: Habildiades com seu respectivos atributos e reorganização do script;
+--   30/04/2022 => Adição de 02 novas tabelas com seu respectivos atributos e reorganização do script;
+--   01/05/2022 => Correção do auto_increment;
 -- PROJETO => 01 Base de Dados
 --         => 23 Tabelas
 --         => 03 Usuarios
@@ -29,7 +30,7 @@ CREATE TABLE PSICOPEDAGOGO (
     idPsicopedagogo INT NOT NULL auto_increment,
     nomePsicopedagogo VARCHAR(50) NOT NULL,
     CONSTRAINT PSICOPEDAGOGO_PK PRIMARY KEY (idPsicopedagogo)
-)ENGINE = InnoDB;
+)ENGINE = InnoDB, AUTO_INCREMENT = 1;
 
 CREATE TABLE DOCUMENTO (
     idDocumento INT NOT NULL auto_increment,
@@ -48,7 +49,7 @@ CREATE TABLE DOCUMENTO (
         REFERENCES PSICOPEDAGOGO (idPsicopedagogo)
     ON DELETE RESTRICT
     ON UPDATE RESTRICT
-)ENGINE = InnoDB;
+)ENGINE = InnoDB, AUTO_INCREMENT = 1;
 
 CREATE TABLE ANAMNESE (
     idAnamnese INT NOT NULL auto_increment,
@@ -104,7 +105,7 @@ CREATE TABLE ANAMNESE (
     ON DELETE RESTRICT
     ON UPDATE RESTRICT,
     CONSTRAINT ANAMNESE_UK UNIQUE (idDocumento)
-)ENGINE = InnoDB;
+)ENGINE = InnoDB, AUTO_INCREMENT = 15;
 
 -- INICIO TABLEAS REFERENETES ANAMNESE
 CREATE TABLE IRMAO (
@@ -117,7 +118,7 @@ CREATE TABLE IRMAO (
     CONSTRAINT IRMAO_ANAMNESE_FK FOREIGN KEY (idAnamnese) REFERENCES ANAMNESE (idAnamnese)
     ON DELETE CASCADE
     ON UPDATE CASCADE
-)ENGINE = InnoDB;
+)ENGINE = InnoDB , AUTO_INCREMENT = 1;
 
 
 CREATE TABLE DOENCAINFANCIA (
@@ -129,7 +130,7 @@ CREATE TABLE DOENCAINFANCIA (
     CONSTRAINT DOENCAINFANCIA_ANAMNESE_FK FOREIGN KEY (idAnamnese) REFERENCES ANAMNESE (idAnamnese)
     ON DELETE CASCADE
     ON UPDATE CASCADE
-)ENGINE = InnoDB;
+)ENGINE = InnoDB , AUTO_INCREMENT = 1;
 -- FIM TABLEAS REFERENETES ANAMNESE
 
 -- INICIO TABLEAS COM LIGACOES REFERENTES AO CONTRATO
@@ -150,7 +151,7 @@ CREATE TABLE PACOTE (
     qtdSessoesSemanais INT NOT NULL,
     precoPorSessao FLOAT NOT NULL,
     CONSTRAINT PACOTE_PK PRIMARY KEY (idPacote)
-)ENGINE = InnoDB;
+)ENGINE = InnoDB , AUTO_INCREMENT = 1;
 
 
 -- INICIO MULTIVALARDO DE RESPONSAVEL
@@ -190,7 +191,7 @@ CREATE TABLE CONTRATO (
     ON DELETE RESTRICT
     ON UPDATE RESTRICT,
     CONSTRAINT CONTRATO_UK UNIQUE (idAnamnese, idDocumento)
-)ENGINE = InnoDB;
+)ENGINE = InnoDB , AUTO_INCREMENT = 1;
 CREATE TABLE SESSAO (
     idSessao INT NOT NULL auto_increment,
     idCONTRATO INT NOT NULL,
@@ -202,7 +203,7 @@ CREATE TABLE SESSAO (
         REFERENCES CONTRATO (idCONTRATO)
         ON DELETE RESTRICT
         ON UPDATE RESTRICT
-) ENGINE = InnoDB;
+) ENGINE = InnoDB , AUTO_INCREMENT = 1;
 
 CREATE TABLE RELATORIO (
     idRelatorio INT NOT NULL  auto_increment,
@@ -214,7 +215,7 @@ CREATE TABLE RELATORIO (
         ON DELETE RESTRICT
         ON UPDATE RESTRICT,
     CONSTRAINT RELATORIO_UK UNIQUE(idContrato)
-)ENGINE = InnoDB;
+)ENGINE = InnoDB , AUTO_INCREMENT = 1;
 
 -- INICIO TABLEAS MULTIVALORADAS REFERENETES ANAMNESE
 CREATE TABLE medicamentosDuranteGravidez (
@@ -340,7 +341,7 @@ CREATE TABLE HABILIDADE (
     nome VARCHAR(20) NOT NULL,
     descricao VARCHAR(40) DEFAULT NULL,
     CONSTRAINT HABILIDADE_PK PRIMARY KEY (idHabilidade)
-)ENGINE = InnoDB;
+)ENGINE = InnoDB, AUTO_INCREMENT = 1;
 
 CREATE TABLE trabalha (
     idSessao INT NOT NULL,

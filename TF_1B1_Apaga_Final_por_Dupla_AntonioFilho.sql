@@ -22,7 +22,6 @@ DROP TABLE trabalha;
 DROP TABLE HABILIDADE;
 DROP TABLE medicamentos;
 DROP TABLE doencasAoNascer;
-
 DROP TABLE especialistasFornecendoAtendimentoAtualmente;
 DROP TABLE medicamentosAoNascer;
 DROP TABLE casosNaFamiliaDeDoenca;
