@@ -62,5 +62,4 @@ CREATE USER marialuisa
 IDENTIFIED BY 'responsavelSuperar3';
 GRANT 'responsavel' TO 'marialuisa';
 
-FLUSH PRIVILEGES;
 
