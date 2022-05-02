@@ -11,7 +11,9 @@
 --   27/04/2022 => Adição de dados em 03 novas tabelas: PSICOPEDAGOGO, PACOTE e RELATORIO;
 --              => Mudança na inserção do atributo nomePsicopedagogo da tabela DOCUMENTO para PSICOPEDAGOGO;
 --              => Mudança na inserção dos atributos qtdSessoesSemanais e precoPorSessao da tabela CONTRATACAO para PACOTE;
+--
 --   30/04/2022 => Adição de novas tuplas para todas as tabelas
+--
 -- PROJETO => 01 Base de Dados
 --         => 24 Tabelas
 -- 		   => 03 papeis
@@ -27,7 +29,8 @@ VALUES
 ('CAIO BATISTA'),
 ('ERICK BATISTA'),
 ('FABIANA BATISTA'),
-('Ana Maria da Silva');
+('Ana Maria da Silva'),
+('Matheus Henrique Ferreira');
 
 
 
