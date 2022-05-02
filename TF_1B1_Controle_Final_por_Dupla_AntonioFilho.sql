@@ -12,7 +12,7 @@
 -- PROJETO => 01 Base de Dados
 --         => 24 Tabelas
 -- 		   => 03 papeis
---         => 06 Usuarios
+--         => 09 Usuarios
 -- ---------------------------------------
 
 CREATE ROLE IF NOT EXISTS 'administrador', 'psicopedagogo', 'responsavel';
@@ -31,6 +31,10 @@ CREATE USER caio
 IDENTIFIED BY 'adminSupperar2';
 GRANT 'administrador' TO 'caio';
 
+CREATE USER antonio
+IDENTIFIED BY 'adminSupperar3';
+GRANT 'administrador' TO 'antonio';
+
 -- PERFIL PSICOPEDAGOGO
 
 CREATE USER rozana
@@ -41,6 +45,10 @@ CREATE USER flavio
 IDENTIFIED BY 'psicopedagogoSuperar2';
 GRANT 'psicopedagogo' TO 'flavio';
 
+CREATE USER luana
+IDENTIFIED BY 'psicopedagogoSuperar3';
+GRANT 'psicopedagogo' TO 'luana';
+
 -- PERFIL RESPONSAVEL
 CREATE USER maria
 IDENTIFIED BY 'responsavelSuperar';
@@ -49,6 +57,10 @@ GRANT 'responsavel' TO 'maria';
 CREATE USER joao
 IDENTIFIED BY 'responsavelSuperar2';
 GRANT 'responsavel' TO 'joao';
+
+CREATE USER marialuisa
+IDENTIFIED BY 'responsavelSuperar3';
+GRANT 'responsavel' TO 'marialuisa';
 
 FLUSH PRIVILEGES;
 
