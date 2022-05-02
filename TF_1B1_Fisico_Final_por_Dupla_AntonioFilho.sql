@@ -13,7 +13,7 @@
 --              => Mudança do atributo nomePsicopedagogo da tabela DOCUMENTO para PSICOPEDAGOGO;
 --              => Mudança do atributo qtdSessoesSemanais e precoPorSessao da tabela CONTRATO para PACOTE;
 --
---   30/04/2022 => Adição de 02 novas tabelas com seu respectivos atributos e reorganização do script;
+--   30/04/2022 => Adição de 02 novas tabelas (SESSAO E HABILIDADE) com seu respectivos atributos e reorganização do script;
 --
 --   01/05/2022 => Correção do auto_increment;
 --
