@@ -9,7 +9,7 @@
 --
 -- Ultimas Alteracoes
 --   27/04/2022 => Adição da instrução de DROP TABLE para as 03 novas tabelas: PSICOPEDAGOGO, PACOTE e RELATORIO;
---   27/04/2022 => Adição da instrução de DROP USER para as 03 novos perfis;
+--   27/04/2022 => Adição da instrução de DROP USER para as 06 novos perfis;
 --
 -- PROJETO => 01 Base de Dados
 --         => 24 Tabelas
