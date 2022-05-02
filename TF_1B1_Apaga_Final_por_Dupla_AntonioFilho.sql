@@ -45,8 +45,11 @@ DROP TABLE DOCUMENTO;
 DROP TABLE PSICOPEDAGOGO;
 
 DROP USER bianca;
-DROP USER caio;
+DROP USER caio2;
+DROP USER antonio;
 DROP USER rozana;
 DROP USER flavio;
+DROP USER luana;
 DROP USER maria;
 DROP USER joao;
+DROP USER marialuisa;

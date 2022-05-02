@@ -14,7 +14,9 @@
 --              => Mudança do atributo qtdSessoesSemanais e precoPorSessao da tabela CONTRATO para PACOTE;
 --
 --   30/04/2022 => Adição de 02 novas tabelas com seu respectivos atributos e reorganização do script;
+--
 --   01/05/2022 => Correção do auto_increment;
+--
 -- PROJETO => 01 Base de Dados
 --         => 24 Tabelas
 -- 		   => 03 papeis
@@ -26,7 +28,7 @@ CREATE DATABASE IF NOT EXISTS TF_1B_AntonioFilho;
 USE TF_1B_AntonioFilho;
 
 
--- TABLEAS
+-- TABELAS
 CREATE TABLE PSICOPEDAGOGO (
     idPsicopedagogo INT NOT NULL auto_increment,
     nomePsicopedagogo VARCHAR(50) NOT NULL,
@@ -108,7 +110,7 @@ CREATE TABLE ANAMNESE (
     CONSTRAINT ANAMNESE_UK UNIQUE (idDocumento)
 )ENGINE = InnoDB, AUTO_INCREMENT = 15;
 
--- INICIO TABLEAS REFERENETES ANAMNESE
+-- INICIO TABELAS REFERENTES ANAMNESE
 CREATE TABLE IRMAO (
     idIrmao INT NOT NULL auto_increment,
     sexo ENUM ('m', 'f') NOT NULL,
@@ -134,7 +136,7 @@ CREATE TABLE DOENCAINFANCIA (
 )ENGINE = InnoDB , AUTO_INCREMENT = 1;
 -- FIM TABLEAS REFERENETES ANAMNESE
 
--- INICIO TABLEAS COM LIGACOES REFERENTES AO CONTRATO
+-- INICIO TABELAS COM LIGACOES REFERENTES AO CONTRATO
 CREATE TABLE RESPONSAVEL (
     cpfResponsavel BIGINT NOT NULL,
     nomeCompletoResonsavel VARCHAR(50) NOT NULL,
@@ -193,6 +195,7 @@ CREATE TABLE CONTRATO (
     ON UPDATE RESTRICT,
     CONSTRAINT CONTRATO_UK UNIQUE (idAnamnese, idDocumento)
 )ENGINE = InnoDB , AUTO_INCREMENT = 1;
+
 CREATE TABLE SESSAO (
     idSessao INT NOT NULL auto_increment,
     idCONTRATO INT NOT NULL,
