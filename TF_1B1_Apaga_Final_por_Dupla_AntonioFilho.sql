@@ -14,7 +14,7 @@
 -- PROJETO => 01 Base de Dados
 --         => 24 Tabelas
 -- 		   => 03 papeis
---         => 06 Usuarios
+--         => 09 Usuarios
 -- ---------------------------------------
 
 USE TF_1B_AntonioFilho;
