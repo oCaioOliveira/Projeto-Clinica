@@ -13,7 +13,7 @@
 --              => Mudança na inserção dos atributos qtdSessoesSemanais e precoPorSessao da tabela CONTRATACAO para PACOTE;
 --
 --   30/04/2022 => Adição de novas tuplas para todas as tabelas
---
+--   01/05/2022 => Adição de tuplas para as novas tabelas(SESSAO E HABILIDADE)
 -- PROJETO => 01 Base de Dados
 --         => 24 Tabelas
 -- 		   => 03 papeis
