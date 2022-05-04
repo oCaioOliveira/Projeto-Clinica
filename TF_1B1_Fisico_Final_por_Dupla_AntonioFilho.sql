@@ -4,9 +4,9 @@
 --
 -- Data Criacao ...........: 15/04/2022
 -- Autor(es) ..............: Caio César Oliveira, Antônio Aldísio de Sousa Alves Ferreira Filho,
---                           Bianca Sofia de Oliveira, Daniel Porto
+--                           Bianca Sofia de Oliveira, Daniel Porto, Abraão Alves, Adrian Soares
 -- Banco de Dados .........: MySQL 8.0
--- Base de Dados (nome) ...: TF_1B_AntonioFilho
+-- Base de Dados (nome) ...: TF_Tema_1_AdrianLopes
 --
 -- Ultimas Alteracoes
 --   27/04/2022 => Adição de 03 novas tabelas: PSICOPEDAGOGO, PACOTE e RELATORIO com seus respectivos atributos;
@@ -16,6 +16,7 @@
 --   30/04/2022 => Adição de 02 novas tabelas (SESSAO E HABILIDADE) com seu respectivos atributos e reorganização do script;
 -- 	 30/04/2022 => exclusão da tabela ACOMPANHAMENTO
 --   01/05/2022 => Correção do auto_increment;
+--   04/05/2022 => Correção final do projeto
 --
 -- PROJETO => 01 Base de Dados
 --         => 24 Tabelas
@@ -23,20 +24,20 @@
 --         => 09 Usuarios
 -- ---------------------------------------
 
-CREATE DATABASE IF NOT EXISTS TF_1B_AntonioFilho;
+CREATE DATABASE IF NOT EXISTS TF_Tema_1_AdrianLopes;
 
-USE TF_1B_AntonioFilho;
+USE TF_Tema_1_AdrianLopes;
 
 
 -- TABELAS
 CREATE TABLE PSICOPEDAGOGO (
-    idPsicopedagogo INT NOT NULL auto_increment,
+    idPsicopedagogo INT NOT NULL AUTO_INCREMENT,
     nomePsicopedagogo VARCHAR(50) NOT NULL,
     CONSTRAINT PSICOPEDAGOGO_PK PRIMARY KEY (idPsicopedagogo)
 )ENGINE = InnoDB, AUTO_INCREMENT = 1;
 
 CREATE TABLE DOCUMENTO (
-    idDocumento INT NOT NULL auto_increment,
+    idDocumento INT NOT NULL AUTO_INCREMENT,
     dataRealizacao DATE NOT NULL,
     horaRealizacao TIME NOT NULL,
     nomeCompletoAluno VARCHAR(50) NOT NULL,
@@ -55,7 +56,7 @@ CREATE TABLE DOCUMENTO (
 )ENGINE = InnoDB, AUTO_INCREMENT = 1;
 
 CREATE TABLE ANAMNESE (
-    idAnamnese INT NOT NULL auto_increment,
+    idAnamnese INT NOT NULL AUTO_INCREMENT,
     nomeDoResponsavelPelasInformacoes VARCHAR(50) NOT NULL,
     grauDeParentescoDoResponsavelPelasInformacoes VARCHAR(20) NOT NULL,
     nomeDoResponsavelPelaEntrevista VARCHAR(50) NOT NULL,
@@ -63,25 +64,25 @@ CREATE TABLE ANAMNESE (
     serie INT NOT NULL,
     turma VARCHAR(1) NOT NULL,
     turno ENUM ('m', 'v', 'n') NOT NULL,
-    motivoAusenciaPai TINYTEXT DEFAULT NULL,
-    motivoAusenciaMae TINYTEXT DEFAULT NULL,
+    motivoAusenciaPai VARCHAR(255) DEFAULT NULL,
+    motivoAusenciaMae VARCHAR(255) DEFAULT NULL,
     responsavelResidente VARCHAR(50) NOT NULL,
-    posicaoNaFamilia ENUM ('mais velho', 'do meio', 'cacula', 'unico') NOT NULL,
+    posicaoNaFamilia ENUM ('v', 'm', 'c', 'u') NOT NULL,
     tipoParentescoEntrePais VARCHAR(20) NOT NULL,
     temPaisCasados ENUM ('s', 'n') NOT NULL,
-    queixaPrincipal TINYTEXT NOT NULL,
+    queixaPrincipal VARCHAR(500) NOT NULL,
     tratamentoPreNatal ENUM ('s', 'n') DEFAULT NULL,
-    situacaoAoNascer ENUM ('normal', 'Prematuro', 'Incubadora') DEFAULT NULL,
+    situacaoAoNascer ENUM ('p', 'i', 'n') DEFAULT NULL,
     chorouAoNascer ENUM ('s', 'n') DEFAULT NULL,
     tevePesoNormalAoNascer ENUM ('s', 'n') DEFAULT NULL,
     temCamaIndividual ENUM ('s', 'n') NOT NULL,
     horarioDeDormir TIME NOT NULL,
     horarioDeAcordar TIME NOT NULL,
     nomePessoaMaisUnidaEmCasa VARCHAR(50) NOT NULL,
-    relacionamentoEmCasa TINYTEXT NOT NULL,
+    relacionamentoEmCasa VARCHAR(255) NOT NULL,
     temCuidadoComPertences ENUM ('s', 'n') NOT NULL,
     prefereBrincarSo ENUM ('s', 'n') NOT NULL,
-    reacaoAoSeContrariar TINYTEXT NOT NULL,
+    reacaoAoSeContrariar VARCHAR(255) NOT NULL,
     dataIngressoNaEscolaAtual DATE NOT NULL,
     gostaDoProfessor ENUM ('s', 'n') NOT NULL,
     idadeQueSustentouCabeca INT DEFAULT NULL,
@@ -91,28 +92,28 @@ CREATE TABLE ANAMNESE (
     caiaFrequentemente ENUM ('s', 'n') DEFAULT NULL,
     derrubavaCoisasFrequentemente ENUM ('s', 'n') DEFAULT NULL,
     esbarravaEmPessoasFrequentemente ENUM ('s', 'n') DEFAULT NULL,
-    controleVesical  ENUM ('s', 'n') DEFAULT NULL,
-    controleAnal  ENUM ('s', 'n') DEFAULT NULL,
+    controleVesical VARCHAR(50) DEFAULT NULL,
+    controleAnal VARCHAR(50) DEFAULT NULL,
     idadeQueFalou INT DEFAULT NULL,
     temProblemaNaFala ENUM ('s', 'n') NOT NULL,
     entendeOrdem ENUM ('s', 'n') NOT NULL,
-    descricaoVisaoAudicao TINYTEXT DEFAULT NULL,
-    complemento TINYTEXT DEFAULT NULL,
-    TeveGravidezDesejada ENUM ('s', 'n') DEFAULT NULL,
+    descricaoVisaoAudicao VARCHAR(255) DEFAULT NULL,
+    complemento VARCHAR(255) DEFAULT NULL,
+    teveGravidezDesejada ENUM ('s', 'n') DEFAULT NULL,
     bebeuOuFumouDuranteGravidez ENUM ('s', 'n') DEFAULT NULL,
     condicaoPsicologicaDuranteGravidez VARCHAR(30) DEFAULT NULL,
     tipoParto VARCHAR(20) DEFAULT NULL,
     idDocumento INT,
     CONSTRAINT ANAMNESE_PK PRIMARY KEY (idAnamnese),
     CONSTRAINT ANAMNESE_DOCUMENTO_FK FOREIGN KEY (idDocumento) REFERENCES DOCUMENTO (idDocumento)
-    ON DELETE RESTRICT
-    ON UPDATE RESTRICT,
+		ON DELETE RESTRICT
+		ON UPDATE RESTRICT,
     CONSTRAINT ANAMNESE_UK UNIQUE (idDocumento)
-)ENGINE = InnoDB, AUTO_INCREMENT = 1;
+)ENGINE = InnoDB, AUTO_INCREMENT = 15;
 
 -- INICIO TABELAS REFERENTES ANAMNESE
 CREATE TABLE IRMAO (
-    idIrmao INT NOT NULL auto_increment,
+    idIrmao INT NOT NULL AUTO_INCREMENT,
     sexo ENUM ('m', 'f') NOT NULL,
     professor VARCHAR(20) DEFAULT NULL,
     serie INT DEFAULT NULL,
@@ -125,10 +126,10 @@ CREATE TABLE IRMAO (
 
 
 CREATE TABLE DOENCAINFANCIA (
-    idDoenca INT NOT NULL auto_increment,
+    idDoenca INT NOT NULL AUTO_INCREMENT,
     nomeDoenca VARCHAR(30) NOT NULL,
+	idAnamnese INT,
     idadeDeOcorrencia INT DEFAULT NULL,
-    idAnamnese INT,
     CONSTRAINT DOENCAINFANCIA_PK PRIMARY KEY (idDoenca),
     CONSTRAINT DOENCAINFANCIA_ANAMNESE_FK FOREIGN KEY (idAnamnese) REFERENCES ANAMNESE (idAnamnese)
     ON DELETE CASCADE
@@ -145,12 +146,12 @@ CREATE TABLE RESPONSAVEL (
     bairro VARCHAR(20) NOT NULL,
     cep INT NOT NULL,
     numero INT NOT NULL,
-     complemento VARCHAR(50),
+	complemento VARCHAR(50),
     CONSTRAINT RESPONSAVEL_PK PRIMARY KEY (cpfResponsavel)
 )ENGINE = InnoDB;
 
 CREATE TABLE PACOTE (
-    idPacote INT NOT NULL auto_increment,
+    idPacote INT NOT NULL AUTO_INCREMENT,
     qtdSessoesSemanais INT NOT NULL,
     precoPorSessao FLOAT NOT NULL,
     CONSTRAINT PACOTE_PK PRIMARY KEY (idPacote)
@@ -171,7 +172,7 @@ CREATE TABLE telefones (
 
 -- FIM MULTIVALARDO DE RESPONSAVEL
 CREATE TABLE CONTRATO (
-    idContrato INT NOT NULL auto_increment,
+    idContrato INT NOT NULL AUTO_INCREMENT,
     correcaoDoPreco FLOAT NOT NULL,
     idAnamnese INT NOT NULL,
     cpfResponsavel BIGINT,
@@ -197,23 +198,23 @@ CREATE TABLE CONTRATO (
 )ENGINE = InnoDB , AUTO_INCREMENT = 1;
 
 CREATE TABLE SESSAO (
-    idSessao INT NOT NULL auto_increment,
-    idCONTRATO INT NOT NULL,
-    data DATE NOT NULL,
+    idSessao INT NOT NULL AUTO_INCREMENT,
+    idContrato INT NOT NULL,
+    `data` DATE NOT NULL,
     hora TIME NOT NULL,
-    observacao VARCHAR(50) DEFAULT NULL,
+    observacao VARCHAR(500) DEFAULT NULL,
     CONSTRAINT SESSAO_PK PRIMARY KEY (idSessao),
-    CONSTRAINT SESSAO_CONTRATO_FK FOREIGN KEY (idCONTRATO)
-        REFERENCES CONTRATO (idCONTRATO)
-        ON DELETE RESTRICT
-        ON UPDATE RESTRICT
+    CONSTRAINT SESSAO_CONTRATO_FK FOREIGN KEY (idContrato)
+        REFERENCES CONTRATO (idContrato)
+	ON DELETE RESTRICT
+	ON UPDATE RESTRICT
 ) ENGINE = InnoDB , AUTO_INCREMENT = 1;
 
 CREATE TABLE RELATORIO (
-    idRelatorio INT NOT NULL  auto_increment,
+    idRelatorio INT NOT NULL  AUTO_INCREMENT,
     arquivo MEDIUMBLOB NOT NULL,
     idContrato INT,
-    CONSTRAINT RELATORIO_PK primary key(idRelatorio),
+    CONSTRAINT RELATORIO_PK PRIMARY KEY (idRelatorio),
     CONSTRAINT RELATORIO_CONTRATO_FK FOREIGN KEY (idContrato)
         REFERENCES CONTRATO(idContrato)
         ON DELETE RESTRICT
@@ -224,7 +225,7 @@ CREATE TABLE RELATORIO (
 -- INICIO TABLEAS MULTIVALORADAS REFERENETES ANAMNESE
 CREATE TABLE medicamentosDuranteGravidez (
     idAnamnese INT NOT NULL,
-    medicamentosDuranteGravidez VARCHAR(50) NOT NULL,
+    medicamentosDuranteGravidez VARCHAR(30) NOT NULL,
     CONSTRAINT medicamentosDuranteGravidez_ANAMNESE_FK FOREIGN KEY (idAnamnese)
         REFERENCES ANAMNESE (idAnamnese)
         ON DELETE CASCADE
@@ -233,7 +234,7 @@ CREATE TABLE medicamentosDuranteGravidez (
 )ENGINE = InnoDB;
 
 CREATE TABLE doencasDuranteGravidez (
-    idAnamnese INT,
+    idAnamnese INT NOT NULL,
     doencasDuranteGravidez VARCHAR(20) NOT NULL,
     CONSTRAINT doencasDuranteGravidez_ANAMNESE_FK FOREIGN KEY (idAnamnese)
         REFERENCES ANAMNESE (idAnamnese)
@@ -243,7 +244,7 @@ CREATE TABLE doencasDuranteGravidez (
 )ENGINE = InnoDB;
 
 CREATE TABLE conhecimentos (
-    idAnamnese INT,
+    idAnamnese INT NOT NULL,
     conhecimentos VARCHAR(20) NOT NULL,
     CONSTRAINT conhecimentos_ANAMNESE_FK FOREIGN KEY (idAnamnese)
         REFERENCES ANAMNESE (idAnamnese)
@@ -253,7 +254,7 @@ CREATE TABLE conhecimentos (
 )ENGINE = InnoDB;
 
 CREATE TABLE dificuldades (
-    idAnamnese INT,
+    idAnamnese INT NOT NULL,
     dificuldades VARCHAR(20) NOT NULL,
     CONSTRAINT dificuldades_ANAMNESE_FK FOREIGN KEY (idAnamnese)
         REFERENCES ANAMNESE (idAnamnese)
@@ -263,7 +264,7 @@ CREATE TABLE dificuldades (
 )ENGINE = InnoDB;
 
 CREATE TABLE ajudantesNasTarefas (
-    idAnamnese INT,
+    idAnamnese INT NOT NULL,
     ajudantesNasTarefas VARCHAR(30) NOT NULL,
     CONSTRAINT ajudantesNasTarefas_ANAMNESE_FK FOREIGN KEY (idAnamnese)
         REFERENCES ANAMNESE (idAnamnese)
@@ -273,7 +274,7 @@ CREATE TABLE ajudantesNasTarefas (
 )ENGINE = InnoDB;
 
 CREATE TABLE problemasSaudeFisica (
-    idAnamnese INT,
+    idAnamnese INT NOT NULL,
     problemasSaudeFisica VARCHAR(30) NOT NULL,
     CONSTRAINT problemasSaudeFisica_ANAMNESE_FK FOREIGN KEY (idAnamnese)
         REFERENCES ANAMNESE (idAnamnese)
@@ -283,7 +284,7 @@ CREATE TABLE problemasSaudeFisica (
 )ENGINE = InnoDB;
 
 CREATE TABLE casosNaFamiliaDeDoenca (
-	idAnamnese INT,
+	idAnamnese INT NOT NULL,
     casosNaFamiliaDeDoenca VARCHAR(20) NOT NULL,
 	CONSTRAINT casosNaFamiliaDeDoenca_ANAMNESE_FK FOREIGN KEY (idAnamnese)
         REFERENCES ANAMNESE (idAnamnese)
@@ -293,7 +294,7 @@ CREATE TABLE casosNaFamiliaDeDoenca (
 )ENGINE = InnoDB;
 
 CREATE TABLE medicamentosAoNascer (
-    idAnamnese INT,
+    idAnamnese INT NOT NULL,
     medicamentosAoNascer VARCHAR(30) NOT NULL,
     CONSTRAINT medicamentosAoNascer_ANAMNESE_FK FOREIGN KEY (idAnamnese)
         REFERENCES ANAMNESE (idAnamnese)
@@ -303,7 +304,7 @@ CREATE TABLE medicamentosAoNascer (
 )ENGINE = InnoDB;
 
 CREATE TABLE doencasAoNascer (
-    idAnamnese INT,
+    idAnamnese INT NOT NULL,
     doencasAoNascer VARCHAR(30) NOT NULL,
     CONSTRAINT doencasAoNascer_ANAMNESE_FK FOREIGN KEY (idAnamnese)
         REFERENCES ANAMNESE (idAnamnese)
@@ -317,22 +318,23 @@ CREATE TABLE doencasAoNascer (
 
 -- INICIO TABLEAS MULTIVALORADAS REFERENTES AO CONTRATO
 CREATE TABLE medicamentos (
-    idCONTRATO INT,
+    idContrato INT NOT NULL,
     medicamentos VARCHAR(30) NOT NULL,
-    CONSTRAINT medicamentos_CONTRATO_FK FOREIGN KEY (idCONTRATO)
-        REFERENCES CONTRATO (idCONTRATO)
+    CONSTRAINT medicamentos_CONTRATO_FK FOREIGN KEY (idContrato)
+        REFERENCES CONTRATO (idContrato)
         ON DELETE CASCADE
         ON UPDATE CASCADE,
-    CONSTRAINT medicamentos_UK UNIQUE (idCONTRATO, medicamentos)
+    CONSTRAINT medicamentos_UK UNIQUE (idContrato, medicamentos)
 )ENGINE = InnoDB;
+
 CREATE TABLE especialistasFornecendoAtendimentoAtualmente (
-    idCONTRATO INT,
+    idContrato INT NOT NULL,
     especialistasFornecendoAtendimentoAtualmente VARCHAR(50) NOT NULL,
-    CONSTRAINT especialistasFornecendoAtendimentoAtualmente_CONTRATO_FK FOREIGN KEY (idCONTRATO)
-        REFERENCES CONTRATO (idCONTRATO)
+    CONSTRAINT especialistasFornecendoAtendimentoAtualmente_CONTRATO_FK FOREIGN KEY (idContrato)
+        REFERENCES CONTRATO (idContrato)
         ON DELETE CASCADE
         ON UPDATE CASCADE,
-    CONSTRAINT especialistasFornecendoAtendimentoAtualmente_UK UNIQUE (idCONTRATO, especialistasFornecendoAtendimentoAtualmente)
+    CONSTRAINT especialistasFornecendoAtendimentoAtualmente_UK UNIQUE (idContrato, especialistasFornecendoAtendimentoAtualmente)
 )ENGINE = InnoDB;
 
 -- FIM TABLEAS MULTIVALORADAS REFERENTES AO CONTRATO
@@ -341,7 +343,7 @@ CREATE TABLE especialistasFornecendoAtendimentoAtualmente (
 
 -- INICIO TABLEAS REFERENCES A SESSAO
 CREATE TABLE HABILIDADE (
-    idHabilidade INT NOT NULL  auto_increment,
+    idHabilidade INT NOT NULL  AUTO_INCREMENT,
     nome VARCHAR(20) NOT NULL,
     descricao VARCHAR(40) DEFAULT NULL,
     CONSTRAINT HABILIDADE_PK PRIMARY KEY (idHabilidade)
@@ -357,7 +359,8 @@ CREATE TABLE trabalha (
     CONSTRAINT trabalha_HABILIDADE_FK FOREIGN KEY (idHabilidade)
         REFERENCES HABILIDADE(idHabilidade)
         ON DELETE CASCADE
-        ON UPDATE CASCADE
+        ON UPDATE CASCADE,
+	CONSTRAINT trabalha_UK UNIQUE (idSessao, idHabilidade)
 )ENGINE = InnoDB;
 
 

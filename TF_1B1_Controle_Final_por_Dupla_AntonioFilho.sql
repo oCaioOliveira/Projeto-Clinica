@@ -5,7 +5,7 @@
 -- Data Criacao ...........: 27/04/2022
 -- Autor(es) ..............: Caio César Oliveira, Antônio Aldísio de Sousa Alves Ferreira Filho, Bianca Sofia de Oliveira, Daniel Porto
 -- Banco de Dados .........: MySQL 8.0
--- Base de Dados (nome) ...: trabalhofinal1
+-- Base de Dados (nome) ...: TF_Tema_1_AdrianLopes
 -- Ultimas Alteracoes
 --                   01/05/22 => Adequação das permissoes
 -- 					 01/05/22 => Adição roles
@@ -17,9 +17,9 @@
 
 CREATE ROLE IF NOT EXISTS 'administrador', 'psicopedagogo', 'responsavel';
 
-GRANT ALL ON TF_1B_AntonioFilho.* TO 'administrador';
-GRANT SELECT, UPDATE, INSERT, DELETE ON TF_1B_AntonioFilho.* TO 'psicopedagogo';
-GRANT SELECT ON TF_1B_AntonioFilho.* TO 'responsavel';
+GRANT ALL ON TF_Tema_1_AdrianLopes.* TO 'administrador';
+GRANT SELECT, UPDATE, INSERT, DELETE ON TF_Tema_1_AdrianLopes.* TO 'psicopedagogo';
+GRANT SELECT ON TF_Tema_1_AdrianLopes.* TO 'responsavel';
 
 -- PERFIL ADMINISTRADOR
 CREATE USER bianca
